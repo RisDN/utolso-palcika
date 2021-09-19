@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="shortcut icon" href="src/ikon.ico" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="src/style.css"
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>Pálcikás játék</title>
+</head>
+
+<body>
+
+    <div id="hiba-uzenet">
+        <i style="padding: 3px; font-size: 45px;" class="fas fa-exclamation-circle"></i><br>
+        <span style="background-color: var(--red); color: rgb(247, 60, 60); border-radius: 7px; padding: 2px;" id="hiba-uzenet-kijelzo"></span>
+    </div>
+
+    <div class="fent">
+        <h2>Utolsó Pálcika</h2>
+        <div class="vonal"></div>
+    </div>
+
+    <div class="reg">
+        <div class="kerdes">
+            <h2>Kik játszanak?</h2>
+        </div>
+        <div class="bejelentkezes">
+            <div class="jatekos">
+                <input placeholder="Játékos 1" type="text" id="jatekos1">
+            </div>
+            <div class="jatekos">
+                <input placeholder="Játékos 2" type="text" id="jatekos2">
+            </div>
+        </div>
+
+        <div class="inditas">
+            <button class="startGomb">Indítás</button> <br>
+            <button class="meccsElozmenyek" data-toggle="modal" data-target="#exampleModal">Meccselőzmények</button>
+        </div>
+
+
+        <div class="hogyan">
+            <h2>A játékról</h2>
+            <p>A játék pofon egyszerű.</p>
+            <ul>
+                <li>Pálcikák vannak amelyeket a játékosok felváltva vesznek el a sorból</li>
+                <li>5 és 15 között bármennyi pálcika generálódhat</li>
+                <li>A játék elején lehet választani, ki fog kezdeni</li>
+                <li>Vagy 1-et, vagy 2-t lehet elvenni egyszerre</li>
+                <li>Az nyer, aki az utolsó pálcikát veszi el</li>
+            </ul>
+            <p><b>Készítette:</b> Rostás András Péter<br><b>Készült</b>: 2021.07.21</p>
+        </div>
+
+    </div>
+
+
+
+
+
+
+    <div class="palya">
+
+        <div class="mennyisegSorsolas">
+            <p>A játék <span class="mennyisegSorsolasKijelzo"></span> pálcikával fog indulni</p>
+        </div>
+        <div class="kiFogKezdeni">
+            <p>Ki fog kezdeni?</p>
+            <button class="jatekos1Kezd"></button>
+            <button class="jatekos2Kezd"></button>
+        </div>
+
+        <div class="iranyitas">
+            <span class="kiKovetkezikKijelzo"></span>
+            <div class="iranyitasGombok">
+                <h4 class="jelenlegiPalcikaKijelzo"></h4>
+                <h4>Hányat veszel el?</h4>
+                <button id="elveszek1">1-et</button>
+                <button id="elveszek2">2-t</button>
+            </div>
+        </div>
+
+        <div class="nyertesKepernyo">
+            <div class="nyertesKepernyoDoboz">
+                <h1 class="kiNyertKijelzo"></h1>
+                <div class="korVegiStatisztikak">
+                    <h3>Statisztikák a körről:</h3>
+                    <ul class="statisztikak"></ul>
+                    <h6>Készítette: Rostás András Péter</h6>
+                </div>
+                <div class="iranyitasGombok">
+                    <button onclick="ujKor()">Új kör</button>
+                    <button onclick="location.reload()">Főmenü</button>
+                    <button onclick="kilepes()">Kilépés</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="palcikak"></div>
+        <div class="szamlalo"></div>
+    </div>
+
+
+
+
+
+
+    <div class="eredmenyjelzo">
+        <div class="vonal"></div>
+        <div class="eredmenyek">
+            <h2 class="jatekos1"></h2>
+            <h2 class="jatekosElvalaszto"></h2>
+            <h2 class="jatekos2"></h2>
+        </div>
+    </div>
+      
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Meccselőzmények</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div id="nincs" class="meccsElozmenyekNincs">
+                  <br>
+                  <br>
+                  <br>
+                <p style="text-align: center; color: rgb(247, 60, 60);">Nincsen egy mentett meccs sem</p>
+              </div>
+
+            </div>
+            <div class="modal-footer" style="display: block !important;">
+                <p>Lejátszott körök után itt jelennek meg az eredmények.</p>
+                <p>Meccselőzmények törlése: <i onclick="elozmenyekTorlese()" class="fas fa-trash-alt meccsElozmenyekTorlese"></i></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+   
+
+
+
+    <script src="src/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+</body>
+
+
+</html>
