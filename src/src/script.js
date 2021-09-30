@@ -84,6 +84,7 @@ function idoTartamSzamlalas() {
             idoTartamMasodperc = 0
             idoTartamPerc++
         }
+        //console.log(`${idoTartamPerc} perc ${idoTartamMasodperc}`)
     }
 }
 
@@ -206,7 +207,7 @@ function jatekVege() {
         let adat = JSON.parse(localStorage.getItem('palcika-adat'))
         adat.push(elozmeny)
 
-        console.log(adat, JSON.stringify(JSON.stringify(adat)))
+        //console.log(adat, JSON.stringify(JSON.stringify(adat)))
 
         localStorage.setItem('palcika-adat', JSON.stringify(adat))
         localStorage.setItem('palcika-id', id+1)
@@ -222,6 +223,8 @@ function jatekVege() {
 
 
 function ujKor() {
+    idoTartamPerc = 0
+    idoTartamMasodperc = 0
     valtozokAlaphelyzetbe()
     kiFogKezdeni()
     eredmenyjelzoMegjelenites(jatekosok)
@@ -245,13 +248,24 @@ function valtozokAlaphelyzetbe() {
 const palcikakDoboza = document.querySelector('.palcikak')
 
 function palcikakMegjelenitese(mennyiseg) {
-    palcikakDoboza.innerHTML = ''
-    for (let i = 0; i < mennyiseg; i++) {
-        palcikakDoboza.innerHTML += `
-        <div class="palcika">
-            <img draggable="false" height="125" width="125" src="src/palcika.png">
-        </div>
-        `
+    if(mennyiseg >= 13) {
+        palcikakDoboza.innerHTML = ''
+        for (let i = 0; i < 13; i++) {
+            palcikakDoboza.innerHTML += `
+            <div class="palcika">
+                <img draggable="false" height="125" width="125" src="src/palcika.png">
+            </div>
+            `
+        }
+    } else {
+        palcikakDoboza.innerHTML = ''
+        for (let i = 0; i < mennyiseg; i++) {
+            palcikakDoboza.innerHTML += `
+            <div class="palcika">
+                <img draggable="false" height="125" width="125" src="src/palcika.png">
+            </div>
+            `
+        }
     }
 }
 
@@ -345,7 +359,7 @@ function mentettElozmenyekBetoltes() {
     nincsElozmeny.style.display = 'none'
     let adat = JSON.parse(localStorage.getItem('palcika-adat'))
     adat.forEach(elem => {
-        console.log(elem)
+        //console.log(elem)
         let ujElem = document.createElement('div')
         ujElem.className = 'elozmeny'
         ujElem.id = elem.id

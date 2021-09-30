@@ -7,8 +7,8 @@ let ablak
 app.on('ready', () => {
 	ablak = new BrowserWindow({
 		title: 'Utolsó pálcika',
-		width: 1300,
-		height: 800,
+		width: 1000,
+		height: 600,
 		resizable: false,
         webPreferences: {
             nodeIntegration: true,

@@ -11,9 +11,9 @@ body {
     background-color: rgb(141, 219, 219);
     border-radius: 10px;
     margin: 0 auto;
-    margin-top: 5%;
-    width: 1100px;
-    height: 550px;
+    margin-top: 0px;
+    width: 800px;
+    height: 450px;
     display: none;
 }
 
@@ -38,12 +38,19 @@ input::placeholder {
 
 .inditas {
     text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.inditas button {
+    padding: 0px;
+    margin: 5px;
 }
 
 button {
     border-radius: 5px;
     background-color: aliceblue;
-    width: 75px;
+    width: 78px;
 }
 
 .meccsElozmenyek {
@@ -53,7 +60,7 @@ button {
 
 .jatekos {
     margin: 25px;
-    margin-top: 10%;
+    margin-top: 1%;
 }
 
 .fent {
@@ -68,6 +75,11 @@ button {
     bottom: 0%;
     width: 100%;
     background-color: aquamarine;
+}
+
+
+#exampleModal {
+    overflow: hidden;
 }
 
 .eredmenyek {
@@ -85,19 +97,12 @@ button {
 }
 
 .kerdes {
-    width: auto;
     text-align: center;
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    top: 16%;
 }
 
 .hogyan {
     background-color: rgb(141, 219, 219);
-    width: 35%;
+    width: 75%;
     padding: 5px;
     border-radius: 10px;
     margin: 0 auto;
@@ -138,7 +143,7 @@ button {
 }
 
 .palcikak {
-    padding-top: 5%;
+    padding-top: 5px;
 }
 
 .palcika {
@@ -163,8 +168,8 @@ button {
 .szamlalo {
     position: fixed;
     text-align: center;
-    top: 83%;
-    left: 44.5%;
+    top: 15%;
+    left: 10.5%;
 }
 
 #hiba-uzenet {
@@ -174,7 +179,7 @@ button {
     text-align: center;
     width: 300px;
     height: 150px;
-    top: 35%;
+    top: 54%;
     left: 50%;
     margin-top: -220px;
     margin-left: -150px;
@@ -236,7 +241,7 @@ input {
     height: 27vh;
     overflow: auto;
 }
-
-#exampleModal {
-    overflow: hidden;
+.elvesz-gomb {
+    width: 45px;
+    font-size: 15px;
 }
