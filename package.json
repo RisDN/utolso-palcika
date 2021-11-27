@@ -1,83 +1,84 @@
 {
-  "name": "utolso-palcika",
-  "productName": "Utolsó pálcika",
-  "version": "1.0.0",
-  "description": "Vajon sikerül elvenned az utolsó pálcikát?",
-  "main": "src/index.js",
-  "scripts": {
-    "start": "electron-forge start",
-    "package": "electron-forge package",
-    "make": "electron-forge make",
-    "publish": "electron-forge publish",
-    "lint": "echo \"No linting configured\"",
-    "build-installer": "electron-builder"
-  },
-  "build": {
-    "appId": "utolso-palcika",
-    "win": {
-      "target": [
-        "nsis"
-      ],
-      "icon": "src/src/ikon.ico"
+    "name": "utolso-palcika",
+    "productName": "Utolsó pálcika",
+    "version": "1.0.0",
+    "description": "Vajon sikerül elvenned az utolsó pálcikát?",
+    "main": "src/index.js",
+    "scripts": {
+        "start": "electron-forge start",
+        "package": "electron-forge package",
+        "make": "electron-forge make",
+        "publish": "electron-forge publish",
+        "lint": "echo \"No linting configured\"",
+        "build-installer": "electron-builder"
+    },
+    "build": {
+        "appId": "utolso-palcika",
+        "win": {
+            "target": [
+                "nsis"
+            ],
+            "icon": "src/src/ikon.ico"
+        },
+        "nsis": {
+            "installerIcon": "src/src/ikon.ico",
+            "uninstallerIcon": "src/src/ikon.ico",
+            "uninstallDisplayName": "Utolsó pálcika eltávolítása",
+            "oneClick": false,
+            "allowToChangeInstallationDirectory": true
+        }
     },
     "nsis": {
-      "installerIcon": "src/src/ikon.ico",
-      "uninstallerIcon": "src/src/ikon.ico",
-      "uninstallDisplayName": "Utolsó pálcika eltávolítása",
-      "oneClick": false,
-      "allowToChangeInstallationDirectory": true
-    }
-  },
-  "nsis": {
-    "installerIcon": "src/src/ikon.ico",
-    "uninstallerIcon": "src/src/ikon.ico",
-    "uninstallDisplayName": "Utolsó pálcika eltávolítása",
-    "oneClick": "false",
-    "allowToChangeInstallationDirectory": true
-  },
-  "keywords": [],
-  "author": {
-    "name": "Ris",
-    "email": "r.andriska05@gmail.com"
-  },
-  "license": "MIT",
-  "config": {
-    "forge": {
-      "packagerConfig": {},
-      "makers": [
-        {
-          "name": "@electron-forge/maker-squirrel",
-          "config": {
-            "name": "utolsó pálcika"
-          }
-        },
-        {
-          "name": "@electron-forge/maker-zip",
-          "platforms": [
-            "darwin"
-          ]
-        },
-        {
-          "name": "@electron-forge/maker-deb",
-          "config": {}
-        },
-        {
-          "name": "@electron-forge/maker-rpm",
-          "config": {}
+        "installerIcon": "src/src/ikon.ico",
+        "uninstallerIcon": "src/src/ikon.ico",
+        "uninstallDisplayName": "Utolsó pálcika eltávolítása",
+        "oneClick": "false",
+        "allowToChangeInstallationDirectory": true
+    },
+    "keywords": [],
+    "author": {
+        "name": "Ris",
+        "email": "r.andriska05@gmail.com"
+    },
+    "license": "MIT",
+    "config": {
+        "forge": {
+            "packagerConfig": {},
+            "makers": [
+                {
+                    "name": "@electron-forge/maker-squirrel",
+                    "config": {
+                        "name": "utolsó pálcika"
+                    }
+                },
+                {
+                    "name": "@electron-forge/maker-zip",
+                    "platforms": [
+                        "darwin"
+                    ]
+                },
+                {
+                    "name": "@electron-forge/maker-deb",
+                    "config": {}
+                },
+                {
+                    "name": "@electron-forge/maker-rpm",
+                    "config": {}
+                }
+            ]
         }
-      ]
+    },
+    "dependencies": {
+        "electron-squirrel-startup": "^1.0.0",
+        "update-electron-app": "^2.0.1"
+    },
+    "devDependencies": {
+        "@electron-forge/cli": "^6.0.0-beta.61",
+        "@electron-forge/maker-deb": "^6.0.0-beta.61",
+        "@electron-forge/maker-rpm": "^6.0.0-beta.61",
+        "@electron-forge/maker-squirrel": "^6.0.0-beta.61",
+        "@electron-forge/maker-zip": "^6.0.0-beta.61",
+        "electron-builder": "^22.11.7",
+        "electron": "14.0.1"
     }
-  },
-  "dependencies": {
-    "electron-squirrel-startup": "^1.0.0"
-  },
-  "devDependencies": {
-    "@electron-forge/cli": "^6.0.0-beta.61",
-    "@electron-forge/maker-deb": "^6.0.0-beta.61",
-    "@electron-forge/maker-rpm": "^6.0.0-beta.61",
-    "@electron-forge/maker-squirrel": "^6.0.0-beta.61",
-    "@electron-forge/maker-zip": "^6.0.0-beta.61",
-    "electron-builder": "^22.11.7",
-    "electron": "14.0.1"
-  }
 }
