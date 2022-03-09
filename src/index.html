@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <link rel="stylesheet" href="src/style.css"
+    <link rel="stylesheet" href="src/style.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <title>Pálcikás játék</title>
 </head>
@@ -126,34 +126,34 @@
             <h2 class="jatekos2"></h2>
         </div>
     </div>
-      
-      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Meccselőzmények</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Meccselőzmények</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
-            </div>
-            <div class="modal-body">
-              <div id="nincs" class="meccsElozmenyekNincs">
-                  <br>
-                  <br>
-                  <br>
-                <p style="text-align: center; color: rgb(247, 60, 60);">Nincsen egy mentett meccs sem</p>
-              </div>
+                </div>
+                <div class="modal-body">
+                    <div id="nincs" class="meccsElozmenyekNincs">
+                        <br>
+                        <br>
+                        <br>
+                        <p style="text-align: center; color: rgb(247, 60, 60);">Nincsen egy mentett meccs sem</p>
+                    </div>
 
+                </div>
+                <div class="modal-footer" style="display: block !important;">
+                    <p>Lejátszott körök után itt jelennek meg az eredmények.</p>
+                    <p>Meccselőzmények törlése: <i onclick="elozmenyekTorlese()" class="fas fa-trash-alt meccsElozmenyekTorlese"></i></p>
+                </div>
             </div>
-            <div class="modal-footer" style="display: block !important;">
-                <p>Lejátszott körök után itt jelennek meg az eredmények.</p>
-                <p>Meccselőzmények törlése: <i onclick="elozmenyekTorlese()" class="fas fa-trash-alt meccsElozmenyekTorlese"></i></p>
-            </div>
-          </div>
         </div>
-      </div>
+    </div>
 
-   
+
 
 
 

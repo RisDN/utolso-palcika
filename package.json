@@ -12,6 +12,10 @@
         "lint": "echo \"No linting configured\"",
         "build-installer": "electron-builder"
     },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/RisDN/utolso-palcika.git"
+    },
     "build": {
         "appId": "utolso-palcika",
         "win": {
